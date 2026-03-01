@@ -69,24 +69,35 @@ def plot_bar_horizontal(df, colors, save_path=None):
     plt.show()
 
 def plot_pie_top(df, top_n=5, save_path=None):
-    df['perc_contribution'] = df['revenue'] / df['revenue'].sum() * 100
-    top_states = df.head(top_n)
-    
+
+    # Trabalhar com cópia para evitar modificar o df original
+    df_copy = df.copy()
+    df_copy['perc_contribution'] = (
+        df_copy['revenue'] / df_copy['revenue'].sum() * 100
+    )
+
+    top_states = df_copy.head(top_n)
+
     print(f"Top {top_n} estados com percentual de contribuição:")
     print(top_states[['customer_state', 'revenue', 'perc_contribution']], "\n")
-    
-    plt.figure(figsize=(8,8))
+
+    plt.figure(figsize=(8, 8))
     plt.pie(
-        top_states['revenue'], 
-        labels=top_states['customer_state'], 
-        autopct='%1.1f%%', 
-        colors=plt.cm.viridis(top_states['revenue'] / top_states['revenue'].max())
+        top_states['revenue'],
+        labels=top_states['customer_state'],
+        autopct='%1.1f%%',
+        colors=plt.cm.viridis(
+            top_states['revenue'] / top_states['revenue'].max()
+        )
     )
+
     plt.title(f"Top {top_n} Estados - Participação na Receita")
+
     if save_path:
         plt.savefig(save_path)
-    plt.show()
 
+    plt.show()
+    
 # -------------------------------
 # Execução do projeto
 # -------------------------------
