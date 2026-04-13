@@ -1,4 +1,4 @@
-# Olist State Revenue Analysis
+# Revenue-Concentration-Analysis
 
 Modular exploratory data analysis of state-level revenue using Python, Pandas and Matplotlib.
 
