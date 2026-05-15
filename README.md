@@ -72,3 +72,24 @@ Processed dataset containing aggregated revenue by customer state.
 
 ```bash
 data/processed/abc_state_revenue.csv
+
+### ⚙️ Methodology
+Data loading and inspection
+Data cleaning and validation
+Descriptive statistics analysis
+Revenue aggregation by state
+Revenue contribution calculation
+Visual analysis using bar charts and pie charts
+Business insight extraction
+
+### 📌 Key Takeaway
+
+Revenue distribution is highly uneven, indicating strong dependence on a few key markets while also revealing strategic opportunities for geographic diversification and market expansion.
+
+### 📷 Preview
+
+![Revenue Chart](reports/revenue_bar_chart.png)
+
+### 🔗 Technologies Used
+
+Python | Pandas | Matplotlib | Data Analysis | EDA
